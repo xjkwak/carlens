@@ -49,65 +49,65 @@
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
+  --primary: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --accent: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
+  --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
+  --ring: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
+  --chart-1: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
   --sidebar-primary-foreground: oklch(0.985 0 0);
   --sidebar-accent: oklch(0.97 0 0);
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-ring: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
+  --background: oklch(0.08 0.02 300); /* Dark purple background - #2f0286 */
   --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
+  --card: oklch(0.12 0.03 300); /* Slightly lighter purple - #4806aa */
   --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
+  --popover: oklch(0.12 0.03 300); /* #4806aa */
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
+  --primary: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.15 0.05 300); /* #673fa4 - Medium purple */
   --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
+  --muted: oklch(0.15 0.05 300); /* #673fa4 - Medium purple */
+  --muted-foreground: oklch(0.7 0.1 300); /* #8e93a9 - Muted purple */
+  --accent: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
   --accent-foreground: oklch(0.985 0 0);
   --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
+  --border: oklch(0.2 0.05 300); /* #6b4a8b - Border purple */
+  --input: oklch(0.2 0.05 300); /* #6b4a8b - Input purple */
+  --ring: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
+  --chart-1: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
+  --chart-2: oklch(0.7 0.15 300); /* #9f83cb - Light purple */
+  --chart-3: oklch(0.5 0.2 300); /* #7e5abb - Medium purple */
+  --chart-4: oklch(0.9 0.1 300); /* #e4dbeb - Very light purple */
+  --chart-5: oklch(0.4 0.15 300); /* #6b4a8b - Muted purple */
+  --sidebar: oklch(0.12 0.03 300); /* #4806aa */
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent: oklch(0.15 0.05 300); /* #673fa4 - Medium purple */
   --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --sidebar-border: oklch(0.2 0.05 300); /* #6b4a8b - Border purple */
+  --sidebar-ring: oklch(0.58 0.25 300); /* #9309f7 - Main Coderoad purple */
 }
 
 @layer base {
@@ -180,7 +180,28 @@
 }
 
 [data-slot="scroll-area-thumb"] {
-  background-color: rgb(115 115 115 / 0.2) !important;
+  background-color: oklch(0.58 0.25 300 / 0.3) !important; /* Coderoad purple with opacity */
+}
+
+/* Coderoad Purple Accent Classes */
+.text-coderoad {
+  color: oklch(0.58 0.25 300); /* #9309f7 */
+}
+
+.bg-coderoad {
+  background-color: oklch(0.58 0.25 300); /* #9309f7 */
+}
+
+.border-coderoad {
+  border-color: oklch(0.58 0.25 300); /* #9309f7 */
+}
+
+.hover\:bg-coderoad:hover {
+  background-color: oklch(0.58 0.25 300); /* #9309f7 */
+}
+
+.hover\:text-coderoad:hover {
+  color: oklch(0.58 0.25 300); /* #9309f7 */
 }
 
 /* Ensure your body or html has a dark background if not already set, e.g.: */

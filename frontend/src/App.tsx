@@ -150,7 +150,7 @@ export default function App() {
   }, [thread]);
 
   return (
-    <div className="flex h-screen bg-neutral-800 text-neutral-100 font-sans antialiased">
+    <div className="flex h-screen bg-background text-foreground font-sans antialiased dark">
       <main className="h-full w-full max-w-4xl mx-auto">
           {thread.messages.length === 0 ? (
             <WelcomeScreen
