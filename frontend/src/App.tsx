@@ -5,8 +5,10 @@ import { ProcessedEvent } from "@/components/ActivityTimeline";
 import { WelcomeScreen } from "@/components/WelcomeScreen";
 import { ChatMessagesView } from "@/components/ChatMessagesView";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "./auth/KeycloakProvider";
 
 export default function App() {
+  const { isAuthenticated, isLoading, error: authError, keycloak } = useAuth();
   const [processedEventsTimeline, setProcessedEventsTimeline] = useState<
     ProcessedEvent[]
   >([]);
@@ -149,9 +151,82 @@ export default function App() {
     window.location.reload();
   }, [thread]);
 
+  // Show loading state while Keycloak initializes
+  if (isLoading) {
+    return (
+      <div className="flex h-screen bg-background text-foreground font-sans antialiased dark">
+        <main className="h-full w-full max-w-4xl mx-auto flex items-center justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground"></div>
+            <p>Authenticating...</p>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  // Show error state if authentication failed
+  if (authError) {
+    return (
+      <div className="flex h-screen bg-background text-foreground font-sans antialiased dark">
+        <main className="h-full w-full max-w-4xl mx-auto flex items-center justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="text-2xl text-red-400 font-bold">Authentication Error</h1>
+            <p className="text-red-400">{authError}</p>
+            <Button
+              variant="destructive"
+              onClick={() => window.location.reload()}
+            >
+              Retry
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  // Show login required if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <div className="flex h-screen bg-background text-foreground font-sans antialiased dark">
+        <main className="h-full w-full max-w-4xl mx-auto flex items-center justify-center">
+          <div className="flex flex-col items-center gap-4">
+            <h1 className="text-2xl font-bold">Login Required</h1>
+            <p>Please log in to access the application.</p>
+            <Button
+              onClick={() => keycloak?.login()}
+              disabled={!keycloak}
+            >
+              Login
+            </Button>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
   return (
     <div className="flex h-screen bg-background text-foreground font-sans antialiased dark">
       <main className="h-full w-full max-w-4xl mx-auto">
+        {/* User info header */}
+        <div className="bg-card border-b p-4 flex justify-between items-center">
+          <div>
+            <p className="text-sm text-muted-foreground">
+              Welcome, {keycloak?.tokenParsed?.preferred_username || keycloak?.tokenParsed?.name || 'User'}
+            </p>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => keycloak?.logout()}
+            disabled={!keycloak}
+          >
+            Logout
+          </Button>
+        </div>
+
+        {/* Main content */}
+        <div className="h-[calc(100vh-80px)]">
           {thread.messages.length === 0 ? (
             <WelcomeScreen
               handleSubmit={handleSubmit}
@@ -183,6 +258,7 @@ export default function App() {
               historicalActivities={historicalActivities}
             />
           )}
+        </div>
       </main>
     </div>
   );
